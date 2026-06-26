@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ftm-Eq-5C7">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
@@ -11,22 +11,13 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ContactPage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="ContactPage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="s0p-L7-TsG">
-                                <rect key="frame" x="16" y="126" width="190" height="32"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" red="0.0" green="0.2773961901" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="190" id="9cG-XE-da1"/>
-                                    <constraint firstAttribute="height" constant="32" id="Bfk-Kf-3MZ"/>
-                                </constraints>
-                            </datePicker>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="3Sz-KV-TnY">
-                                <rect key="frame" x="16" y="732" width="361" height="60"/>
+                                <rect key="frame" x="16" y="736" width="361" height="60"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DJd-q5-nIv" userLabel="PhoneView">
                                         <rect key="frame" x="0.0" y="0.0" width="59.333333333333336" height="60"/>
@@ -64,12 +55,24 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Contacts-Icon" translatesAutoresizingMaskIntoConstraints="NO" id="6FG-ra-2TL">
                                                 <rect key="frame" x="5" y="5" width="49.666666666666664" height="50"/>
                                             </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPV-mf-89z">
+                                                <rect key="frame" x="0.0" y="0.0" width="59.666666666666664" height="60"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="contactBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lXM-Hh-cyb"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="6FG-ra-2TL" secondAttribute="trailing" constant="5" id="9Md-IU-wCy"/>
                                             <constraint firstItem="6FG-ra-2TL" firstAttribute="leading" secondItem="E2l-FZ-RWb" secondAttribute="leading" constant="5" id="Bbw-S2-vCQ"/>
+                                            <constraint firstItem="vPV-mf-89z" firstAttribute="top" secondItem="E2l-FZ-RWb" secondAttribute="top" id="GtZ-q5-2ll"/>
                                             <constraint firstItem="6FG-ra-2TL" firstAttribute="top" secondItem="E2l-FZ-RWb" secondAttribute="top" constant="5" id="S5Q-dC-EGl"/>
+                                            <constraint firstAttribute="bottom" secondItem="vPV-mf-89z" secondAttribute="bottom" id="SmA-n2-Dd8"/>
+                                            <constraint firstAttribute="trailing" secondItem="vPV-mf-89z" secondAttribute="trailing" id="VbA-Os-XWZ"/>
+                                            <constraint firstItem="vPV-mf-89z" firstAttribute="leading" secondItem="E2l-FZ-RWb" secondAttribute="leading" id="x5C-Qm-aBV"/>
                                             <constraint firstAttribute="bottom" secondItem="6FG-ra-2TL" secondAttribute="bottom" constant="5" id="xwk-Kd-pyB"/>
                                         </constraints>
                                     </view>
@@ -108,24 +111,101 @@
                                     <constraint firstItem="DJd-q5-nIv" firstAttribute="leading" secondItem="3Sz-KV-TnY" secondAttribute="leading" id="9MW-5l-3Fs"/>
                                     <constraint firstAttribute="bottom" secondItem="DJd-q5-nIv" secondAttribute="bottom" id="mbb-Fw-CpS"/>
                                     <constraint firstItem="DJd-q5-nIv" firstAttribute="top" secondItem="3Sz-KV-TnY" secondAttribute="top" id="oXx-du-aCV"/>
+                                    <constraint firstAttribute="height" constant="60" id="ur2-kl-E6q"/>
                                 </constraints>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mKN-ou-Yks">
+                                <rect key="frame" x="16" y="188" width="361" height="40"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="s0p-L7-TsG">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.0" green="0.2773961901" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </datePicker>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="s0p-L7-TsG" firstAttribute="leading" secondItem="mKN-ou-Yks" secondAttribute="leading" id="1x5-gY-sBW"/>
+                                    <constraint firstItem="s0p-L7-TsG" firstAttribute="top" secondItem="mKN-ou-Yks" secondAttribute="top" id="QEe-8U-rRq"/>
+                                    <constraint firstAttribute="bottom" secondItem="s0p-L7-TsG" secondAttribute="bottom" id="YLe-gX-oJh"/>
+                                    <constraint firstAttribute="trailing" secondItem="s0p-L7-TsG" secondAttribute="trailing" id="d0e-CB-6KQ"/>
+                                    <constraint firstAttribute="height" constant="40" id="kGn-VJ-VVP"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="s0p-L7-TsG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="E8J-nw-qKJ"/>
-                            <constraint firstItem="s0p-L7-TsG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="GIu-Hk-3xX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mKN-ou-Yks" secondAttribute="trailing" constant="16" id="J0e-2p-HHK"/>
                             <constraint firstItem="3Sz-KV-TnY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="NN4-Nn-2Ho"/>
                             <constraint firstItem="3Sz-KV-TnY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="X38-5J-A6n"/>
-                            <constraint firstItem="3Sz-KV-TnY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="732" id="f0h-bV-ajT"/>
-                            <constraint firstItem="3Sz-KV-TnY" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="8" id="tJD-QZ-DtM"/>
+                            <constraint firstItem="mKN-ou-Yks" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ZAh-oq-Bbi"/>
+                            <constraint firstItem="3Sz-KV-TnY" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="12" id="tJD-QZ-DtM"/>
+                            <constraint firstItem="mKN-ou-Yks" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="tPM-L3-eWT"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="OcL-VF-8TD"/>
+                    <connections>
+                        <outlet property="cameraView" destination="Esy-ra-7ZR" id="hLT-yD-VcG"/>
+                        <outlet property="contactBtn" destination="vPV-mf-89z" id="bOH-xL-Cbp"/>
+                        <outlet property="contactView" destination="E2l-FZ-RWb" id="bn1-uu-4TN"/>
+                        <outlet property="cromeView" destination="uyN-Vu-8zV" id="mEa-TX-haN"/>
+                        <outlet property="dateTimeView" destination="mKN-ou-Yks" id="gOD-W8-3rO"/>
+                        <outlet property="messageView" destination="912-ct-zPr" id="Qfm-G2-133"/>
+                        <outlet property="phoneView" destination="DJd-q5-nIv" id="OlJ-9I-BqZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="131"/>
+            <point key="canvasLocation" x="1064.885496183206" y="130.98591549295776"/>
+        </scene>
+        <!--ContactVC-->
+        <scene sceneID="ZGg-4R-rHp">
+            <objects>
+                <viewController storyboardIdentifier="ContactVC" id="Yqe-Ps-qWW" customClass="ContactVC" customModule="ContactPage" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Cx-Oc-dE5">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="58Y-DF-Y1J">
+                                <rect key="frame" x="0.0" y="118" width="393" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eul-sC-x2J"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="58Y-DF-Y1J" secondAttribute="trailing" id="HZE-0l-AIK"/>
+                            <constraint firstItem="58Y-DF-Y1J" firstAttribute="leading" secondItem="8Cx-Oc-dE5" secondAttribute="leading" id="PAK-BV-lIq"/>
+                            <constraint firstItem="eul-sC-x2J" firstAttribute="bottom" secondItem="58Y-DF-Y1J" secondAttribute="bottom" id="ekk-t7-LK4"/>
+                            <constraint firstItem="58Y-DF-Y1J" firstAttribute="top" secondItem="eul-sC-x2J" secondAttribute="top" id="h7A-Pv-tcH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contactsTVC" destination="58Y-DF-Y1J" id="5z9-NG-I19"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="owu-as-dkQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2055.7251908396947" y="130.98591549295776"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vJ2-fJ-Usy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ftm-Eq-5C7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Yj4-r9-FcA">
+                        <rect key="frame" x="0.0" y="118" width="393" height="54"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="FFz-xI-Iwq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ygX-fG-pe1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.1679389312977" y="130.98591549295776"/>
         </scene>
     </scenes>
     <resources>

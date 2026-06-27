@@ -11,7 +11,19 @@ class ContactVC: UIViewController
 {
     @IBOutlet weak var contactsTVC: UITableView!
     
-    let contacts = ["Mahesh", "Krishna", "Ramesh", "Suresh", "Eshwar", "Ashok"]
+    let contacts: [[String: String]] =
+    [
+        
+        ["name": "Mahesh", "mobile": "88039263748"],
+        ["name": "Krishna", "mobile": "88039263748"],
+        ["name": "Saikiran", "mobile": "88039263748"],
+        ["name": "Uday", "mobile": "88039263748"],
+        ["name": "Lavan", "mobile": "88039263748"],
+        ["name": "Aksahay", "mobile": "88039263748"],
+        ["name": "Heema", "mobile": "88039263748"],
+        ["name": "Ramu", "mobile": "88039263748"],
+    
+    ]
     
     override func viewDidLoad()
     {
@@ -32,10 +44,14 @@ extension ContactVC: UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "contactNamesCell", for: indexPath) as! contactNamesCell
         
+    
         let contact = contacts[indexPath.row]
-        cell.textLabel?.text = contact
+        
+        cell.contactNameViewLbl.text = contact["name"]
+        cell.contactNumberViewLbl.text = contact["mobile"]
+        
         return cell
         
     }
